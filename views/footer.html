@@ -1,0 +1,79 @@
+
+
+            </div>
+        </div><script type="text/javascript">
+var SLConfig = {"deck": {"id":245746,"slug":"make-art-not-apps","title":"Make Art, Not Apps","description":"","visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/thisisjohnbrown/e56f76/make-art-not-apps.jpg","view_count":9,"user":{"id":152052,"username":"thisisjohnbrown","name":"","email":"thisisjohnbrown@gmail.com","description":"","thumbnail_url":"https://www.gravatar.com/avatar/53d5a7978a6560960cabd614e0233e41?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"settings":{"id":3213,"present_controls":true,"present_upsizing":true,"editor_grid":true,"editor_snap":true,"developer_mode":true},"registered":true},"background_transition":"none","transition":"none","theme_id":null,"theme_font":"league","theme_color":"grey-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":true,"rtl":false,"version":1,"notes":{}}};
+        </script><script type="text/javascript">
+SLConfig.current_user = {
+                name: "",
+                username: "thisisjohnbrown",
+                pro: true
+            };
+        </script><script src="lib/head.min.js" type="text/javascript">
+</script><script src="lib/reveal.min.js" type="text/javascript">
+</script><script type="text/javascript">
+Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                mouseWheel: false,
+                viewDistance: 3,
+
+                autoSlide: SLConfig.deck.auto_slide_interval || 0,
+                autoSlideStoppable: true,
+
+                rolling_links: SLConfig.deck.rolling_links || true,
+                center: SLConfig.deck.center || false,
+                loop: SLConfig.deck.should_loop || false,
+                rtl: SLConfig.deck.rtl || false,
+
+                transition: SLConfig.deck.transition,
+                backgroundTransition: SLConfig.deck.background_transition,
+
+                dependencies: [
+                    { src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            if( SLConfig.deck.notes ) {
+                [].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+                    var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+                    if( value && typeof value === 'string' ) {
+                        slide.setAttribute( 'data-notes', value );
+                    }
+
+                } );
+            }
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                console.log(event.currentSlide.className.indexOf('cutsheet'), event.currentSlide.className.indexOf('cutsheet') == 0);
+                if (event.currentSlide.className.indexOf('cutsheet') !== -1) {
+                    console.log('true');
+                    document.getElementById('cutsheet-twitter').style.display = '';
+                    document.getElementById('main-twitter').style.display = 'none';
+                } else {
+                    console.log('false')
+                    document.getElementById('cutsheet-twitter').style.display = 'none';
+                    document.getElementById('main-twitter').style.display = '';
+                }
+                console.log(document.getElementById('cutsheet-twitter').style.display);
+            } );
+
+            var cutsheets = document.getElementsByClassName('cutsheet');
+            for (var i = 0; i < cutsheets.length; i++) {
+                var cut = cutsheets[i];
+                var p = cut.getElementsByTagName('p')[i];
+                if (p) {
+                    font = p.getElementsByTagName('font')[0];
+                    if (font) {
+                        font.style.color = '#000000';
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
