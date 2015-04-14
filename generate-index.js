@@ -15,7 +15,7 @@ var nextCut = true;
 fs.readdir(__dirname + '/views/sections', function(err, files) {
   for (var i = 0; i < files.length; i++) {
     var fileName = files[i].split('.html')[0];
-    if (fileName.substr(0, 1) !== '-') {
+    if (fileName.substr(0, 1) !== '-' && fileName.substr(0, 1) !== '.') {
       if (nextCut) {
         nextCut = false;
         content += cutsheet;
