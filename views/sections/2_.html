@@ -3,24 +3,27 @@
         CascadiaJS 2014
     </h2>
     <br>
-    <p>story time</p>
+    <p>story time - background of why this happened</p>
+    <p></p>
 </section>
                 
 <section>
     <h2>
-        Getting started
+        Getting started (coming up with the idea)
     </h2>
     <br>
-    <p>Take the first step.</p>
-    <p>Mental lego pieces</p>
-    <p>tinkering and trying things can help later in unexpected ways.</p>
+    <p>Take the first step</p>
+    <p>image of empty glowbox with chair and keyboard stand</p>
+    <p>Idea lego pieces?</p>
 </section>
 
 <section>
     <h2>
-        Iterating and Prototyping
+        Iterating and Prototyping (executing on the idea)
     </h2>
     <br>
+    <p>Mental lego pieces</p>
+    <p>tinkering and trying things can help later in unexpected ways.</p>
     <p>Fail quickly</p>
 </section>
 
@@ -29,7 +32,8 @@
         Commit or quit
     </h2>
     <br>
-    <p>bought materials and put in time/effort</p>
+    <p>it works enough! bought materials and put in time/effort</p>
+    <!-- Show assembly meadly -->
 </section>
 
 <section>
@@ -37,8 +41,25 @@
         Failure
     </h2>
     <br>
+    <p>Appologize to Tracy in an awkward way</p>
     <p>but we kept going</p>
+    <p>List failures - glue is not gluey enough, microcontrollers are too slow, fast microcontroller didn't work the same (grounding issue)</p>
+    <p>some kind of analogy about failing to succeed</p>
 </section>
+
+<section>
+    <h2>
+        Success!
+    </h2>
+    <br>
+    
+    <p>Got the bugs ironed out!</p>
+    <p>[maybe show video of flicking a pin]</p>
+    <p>[show video of board working]</p>
+    <p>Intel Summit, at the Jupiter! Nailed it!!!</p>
+
+</section>
+
 
 <section>
     <h2>
@@ -46,6 +67,7 @@
     </h2>
     <br>
     <p>Seeing people react</p>
+
 </section>
 
 <section>
@@ -54,6 +76,8 @@
     </h2>
     <br>
     <p>100% JS</p>
+    <p>started out as a single canvas -> projection mapping</p>
+    <p>each "vis mode" renders to an off-screen canvas, board layout, and display canvas are abstracted from the visualizers</p>
 </section>
 
 <section>
@@ -61,5 +85,12 @@
         Image capture/GIF encoding
     </h2>
     <br>
-    <p></p>
+    <p>Tried a lot of things</p>
+    <p>Capturing every frame - too slow!</p>
+    <p>WebWorkers didn't make much of a difference</p>
+    <p>Ended up capturing at a low framerate, then sending image data up one by one with progress bar</p>
+    <p>server runs on node.js</p>
+    <p>Express and socket.io handle communication to the front end, and serial peg data from the board</p>
+    <p>GIF encoding is done in a child process (process.fork)</p>
+
 </section>
