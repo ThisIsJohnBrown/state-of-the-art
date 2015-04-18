@@ -6,6 +6,15 @@
     <p>Brief description</p>
     <p>some images, minecraft block?</p>
     <p>how it works (very briefly)</p>
+<!--
+- What the hell is projection mapping?
+- Like the "keystone" thing in your projector, but on steroids.
+- Corrects perspective distortion.
+- This is something I've used many times for other projects and experiments.
+- If you imagine the projector lens as a camera lens, you'd see wierd distorted versions of the flat surfaces.
+- By pre-distorting the content to match the same exact distorted view that the projector lens "sees" it cancels out.
+- Content appears un-distorted.
+-->
 </section>
 
 <section>
@@ -17,6 +26,12 @@
     <p>Built to emulate non-browser based mapping tools</p>
     <p>Useful! Feature packed!</p>
     <p>This often happens when you do projects, fun side-benefit.</p>
+<!-- 
+- Any time projected content needs to be set up quickly, projection mapping is super helpful.
+- plin.co is a perfect case for this technique, Ben has been using commercial software for this stuff, how can we do it in the browser?
+- 3D CSS is able to add 3D perspective to anything in the DOM!
+- By using some cool tricks made possible by math (and numeric.js) we can compute a trasformation matrix based on arbitrary sets of corner points.
+-->
 </section>
 
 <section>
@@ -24,8 +39,21 @@
         Demo time!
     </h2>
     <br>
-    <p>Turn projector on with NODE!</p>
+    <p>Turn projector on with NODE! <input type="button" value="Turn it ON!" id="projector-on-button">
+        <input type="button" value="Turn it off..." id="projector-off-button"></p>
     <p>Demo it. Use 2nd projector on stage and hold up foam core.</p>
+<!--
+- You want to see a demo?
+- John, do you think this is going to work??
+- First of all, we need to turn on this projector.
+- It just so happens that most projectors can be remotely controlled over an old-school serial connection.
+- It also just so happens that there node.js libraries for basically anything you can imagine.
+- We've got a USB to Serial adapter here, connected to the projetor, controlled by node, and accessible via this button.
+- Click.
+- OK!
+- So check it out, I can drag these corners around, and once I get them lined up, it looks all rad.
+- End demo, turn off projector.
+-->
 </section>
 
 <section>
@@ -35,4 +63,11 @@
     <br>
     <p>Free to use! We just made it because we needed it.</p>
     <p>Link to repo.</p>
+<!--
+- Initially this projection mapping code was built directyly into the plin.co rendering system.
+- It seemed incredibly useful for other projects, seemed like a good idea to make it more general purpose.
+- Now it is! maptastic.js, add projection mapping to your web project with 1 line of code.
+- Projection mapping is a great way to get your work out into the real world in a visually stunning way, you don't need fancy hardware, any projector will work. I suggest that you go crazy.
+- Side projcets like plin.co often yeild helpful tools like this.
+-->
 </section>
