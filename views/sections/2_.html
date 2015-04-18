@@ -6,19 +6,6 @@
     <p>[image: cascadia logo]</p>
 </section>
 
-<section>
-    <h2>
-        CascadiaJS 2014
-    </h2>
-    <br>
-    <p>[image: A call for JavaScript powered art]</p>
-<!--
-background of why this happened
-- Cascadia JS is a conference in the PACNW
-- Last year the conference included a javascript art show
-- We wanted to do something physical, not just something on a screen.
--->
-</section>
                 
 <section>
     <h2>
@@ -35,34 +22,30 @@ background of why this happened
 -->
 </section>
 
-<section>
-    <h2>
-        Get Your Hands Dirty
-    </h2>
-    <br>
-    <p class="fragment">Get to work</p>
-    <p class="fragment">Lego pieces</p>
-    <p class="fragment">Fail quickly</p>
-<!-- 
-- In order to vet the idea, we started with the smallest task possible, detecting a puck hitting a peg.
-- After reasoning about several ways to track the puck
-    - Accelerometers
-    - Camera tracking the puck visually
-    - Conductive puck, pinball table style
-    - piezos
-- Due to past experience (minecraft block?) we decided to try piezos
-- I had a chunkload of them already in my studio
-- So we wired one up! [video of 1 peg]
-- Even when ideas don't pan out, you can learn stuff which can be helpful in the future (mental legos).
--->
-</section>
 
 <section>
     <h2>
-        Commit or Quit
+        Let's Make a Plinko!
     </h2>
     <br>
-    <p>Enough messing about</p>
+    <p>[image of Plink-o + JS]</p>
+    <p>Plinko meets generative digital art</p>
+<!-- 
+- Didn't start with any technology decisions (except javascript, duh)
+- It's helpful to have someone to bounce ideas off of
+- We sat in an empty studio and drew stuff on empty ikea boxes
+- The idea we settled on was a mashup of previously unused project ideas
+- It was plinko, plinco, plin.co
+-->
+</section>
+
+
+<section>
+    <h2>
+        Every plinco starts with a single peg
+    </h2>
+    <br>
+    <p>[one-peg video]</p>
 <!--
 - Expanded prototype to 3 sensors, added projection, expanded it to the full board.
 - Show assembly meadly 
@@ -70,14 +53,14 @@ background of why this happened
 -->
 </section>
 
+
 <section>
     <h2>
-        Commit <strike style="color:#909090">or Quit</strike>
+        But does it scale?
     </h2>
     <br>
     <p>[video: assembly]</p>
 </section>
-
 
 
 <section>
@@ -85,12 +68,12 @@ background of why this happened
         Failure!
     </h2>
     <br>
-    <p>What went wrong?</p>
-    <ul>
+    <p>3000 lb epoxy? Not so much.</p>
+    <!--<ul>
         <li class="fragment">glue is not gluey enough</li>
         <li class="fragment">arduino was too slow</li>
         <li class="fragment">inconsistent peg sensing</li>
-    </ul>
+    </ul>-->
 <!--
 - Do apology gag
 
@@ -101,13 +84,15 @@ background of why this happened
 -->
 </section>
 
+
 <section>
-    <h2>#Shmailure</h2>
+    <h2>
+        Shmailure!
+    </h2>
     <br>
-    <p class="fragment">deadlines are important</p>
-    <p class="fragment">quitting is always an option</p>
-    <p class="fragment">plin.co</p>
+    <p>plin.co</p>
 </section>
+
 
 <section>
     <h2>
@@ -116,8 +101,6 @@ background of why this happened
     <br>
     
     <p>[maybe show video of flicking a pin]</p>
-    <p>[show video of board working]</p>
-    <p class="fragment">Cascadia JS 2015, here we come!!!</p>
 <!--
 - Had to completely dismantle and re-build all the pegs
 - After many evenings of tinkering on the project, we got it working!
@@ -145,50 +128,13 @@ background of why this happened
 <section>
     <h2>Where's the JS?</h2>
     <br>
-    <p class="fragment">Basically, everywhere.</p>
+    <p class="fragment">Bsically, everywhere.</p>
+    <p class="fragment">Visualization in Chrome</p>
+    <p class="fragment">Node.js for (almost) everything else</p>
 <!--
 - Hey Ben, that looks like a lot of hardware, this is an Empire JAY ESSSSS!
 - You might not guess, but 99.99912873% of plin.co runs on JS in one way or another.
 - The only non-JS portion is thet physical sensor hardware and a little microcontroller hooked up via USB.
 - Lots of node.js happening, all the graphics, animation, and projector tricks are running in chrome.
 -->
-</section>
-
-<section>
-    <h2>
-        Modular rendering system
-    </h2>
-    <br>
-    <p>single canvas</p>
-    <p>multi-canvas</p>
-    <p>[diagram?]</p>
-
-<!--
-- The entire rendering system runs in the browser.
-- Initially we rendered it all onto a single canvas for projection.
-- The current architecture renders the board off-screen on a separate canvas which can be scaled independently of the visible canvas.
-- Visualization code is modular, each visualizer gets to draw itself once per frame, as is notified when pegs are hit.
--->
-
-</section>
-
-<section>
-    <h2>
-        John to come up with a cool title here (GIF!)
-    </h2>
-    <br>
-    <p>Capture at low framerate</p>
-    <p>Upload captured frames</p>
-    <p>Child process (process.fork)</p>
-<!--
-- We tried several ways of capturing "drops" for replay
-- Rendering GIF's in the browser killed the framerate
-- Capturing every frame is also too slow.
-- Frames are captured at the target output framerate, then sent up to the server serially after the drop is complete.
-   - Required a progress bar to be displayed to keep the server from getting behind.
-   - Sometimes technical limits impose unfortunate UX concessions, but that's better than the server crashing?
-- Express and socket.io handle all communication between the browser and the back end.
-- GIF encoding is handled on a separate process via process.fork in node so express doesn't stop responding to the front-end.
--->
-
 </section>
