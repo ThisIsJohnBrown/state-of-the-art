@@ -60,10 +60,7 @@
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
 
                 document.getElementById("mindwave-link").href = config["mindwave-url"];
-                document.getElementById("uncontext-example-url").href = config["uncontext-example-url"];
                 
-
-
                 var maptastic_socket = io(config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {
                     updateMaptasticDemo(data);
