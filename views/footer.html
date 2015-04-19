@@ -14,14 +14,24 @@
         <script src="lib/jquery-1.11.2.min.js"></script>
         <script src="lib/head.min.js" type="text/javascript"></script>
         <script src="lib/reveal.min.js" type="text/javascript"></script>
+
+        <script src="http://localhost:9000/socket.io/socket.io.js"></script>
+
         <script type="text/javascript">
             
+            $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
+
             Reveal.initialize({
+                width:1920,
+                height: 1080,
                 controls: false,
                 progress: true,
                 history: true,
                 mouseWheel: false,
                 viewDistance: 3,
+
+                minScale: 0.2,
+                maxScale: 3.0,
 
                 autoSlide: SLConfig.deck.auto_slide_interval || 0,
                 autoSlideStoppable: true,
@@ -48,6 +58,17 @@
 
                 document.getElementById("projector-on-button").addEventListener("click", turnProjectorOn);
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
+
+                document.getElementById("mindwave-link").href = config["mindwave-url"];
+                document.getElementById("uncontext-example-url").href = config["uncontext-example-url"];
+                
+
+
+                var maptastic_socket = io(config["maptastic-socket-url"]);
+                maptastic_socket.on("map-update", function(data) {
+                    updateMaptasticDemo(data);
+                });
+
             } );
 
             Reveal.addEventListener( 'slidechanged', function( event ) {
@@ -76,6 +97,27 @@
                         font.style.color = '#000000';
                     }
                 }
+            }
+
+            // draw the layout and mouse position from the maptastic instance on the other machine.
+            function updateMaptasticDemo(data) {
+                var canvas = document.getElementById("maptastic-demo-canvas");
+                var ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "black";
+                ctx.fillRect(0,0,canvas.width, canvas.height);
+
+                ctx.fillStyle="white";
+                ctx.fillRect(data.mx * canvas.width-2, data.my * canvas.height-2, 5, 5);
+
+                ctx.strokeStyle = "white";
+                ctx.beginPath();
+                ctx.moveTo(data.points[0][0] * canvas.width, data.points[0][1] * canvas.height)
+                for(var i = 0; i < 4; i++) {
+                    ctx.lineTo(data.points[i][0] * canvas.width, data.points[i][1] * canvas.height );
+                }
+                ctx.lineTo(data.points[0][0] * canvas.width, data.points[0][1] * canvas.height );
+                ctx.stroke();
             }
 
             function updateSideFooter(currentSlide) {
