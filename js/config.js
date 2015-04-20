@@ -5,5 +5,5 @@ var config = {
 	'plumber-url'           : 'http://raspberrypi:8080/controls.html',
 	'mindwave-url'          : 'some url',
 	'maptastic-socket-url'  : 'http://localhost:9000',
-	'uncontext-example-url' : 'http://codepen.io/ThisIsJohnBrown/embed/AqzuC' // todo: replace with codepen url
+	'uncontext-example-url' : 'http://codepen.io/ThisIsJohnBrown/embed/AqzuC?height=800&theme-id=9890' // todo: replace with codepen url
 };
