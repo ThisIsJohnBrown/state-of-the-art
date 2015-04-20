@@ -20,7 +20,8 @@
         <script type="text/javascript">
             
             $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
-
+            $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+            
             Reveal.initialize({
                 width:1920,
                 height: 1080,
@@ -89,10 +90,7 @@
                 var cut = cutsheets[i];
                 var p = cut.getElementsByTagName('p')[i];
                 if (p) {
-                    font = p.getElementsByTagName('font')[0];
-                    if (font) {
-                        font.style.color = '#000000';
-                    }
+                    p.classList.add("active");
                 }
             }
 
