@@ -72,6 +72,11 @@
             Reveal.addEventListener( 'slidechanged', function( event ) {
                 updateSideFooter(event.currentSlide);
                 updateSlideVideo(event.currentSlide);
+
+                if (event.currentSlide.dataset.status) {
+                    console.log(event.currentSlide.dataset.status);
+                    socket.emit('upload', {'name': event.currentSlide.dataset.status});
+                }
             } );
 
             if( SLConfig.deck.notes ) {
