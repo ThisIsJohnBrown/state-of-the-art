@@ -1,10 +1,19 @@
+/*
+
+8087  Maptastic
+8088  Myo
+8089  RaveWave
+
+*/
+
 var config = {
-	'base-url'              : 'http://localhost:3000',
-	'projector-on-url'      : '/unblank',
-	'projector-off-url'     : '/blank',
+	'projector-on-url'      : ':8087/unblank',
+	'projector-off-url'     : ':8087/blank',
 	'plumber-url'           : 'http://raspberrypi:8080/controls.html',
-	'mindwave-url'          : 'some url',
-	'maptastic-socket-url'  : 'http://localhost:9000',
+	'ravewave-url'          : ':8089',
+  'myo-url'               : ':8088',
+	'maptastic-socket-url'  : ':9000',
 	'uncontext-example-url' : 'http://codepen.io/ThisIsJohnBrown/embed/AqzuC?height=800&theme-id=9890',
-	'endless-plumber-url'   : 'http://endlessplumber:8000/admin.html'
+	'endless-plumber-url'   : 'http://endlessplumber:8000/admin.html',
+  'myo-socket-url'        : ':5000'
 };

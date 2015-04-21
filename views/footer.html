@@ -15,10 +15,12 @@
         <script src="lib/head.min.js" type="text/javascript"></script>
         <script src="lib/reveal.min.js" type="text/javascript"></script>
 
-        <script src="http://localhost:9000/socket.io/socket.io.js"></script>
+        <script src="lib/socket.io.js"></script>
 
         <script type="text/javascript">
             
+            config['base-url'] = 'http://' + window.location.host.split(':')[0];
+
             $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
             $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
             
@@ -60,14 +62,17 @@
                 document.getElementById("projector-on-button").addEventListener("click", turnProjectorOn);
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
 
-                document.getElementById("mindwave-link").href = config["mindwave-url"];
+                document.getElementById("ravewave-link").href = config['base-url'] + config["ravewave-url"];
+                document.getElementById("myo-link").href = config['base-url'] + config["myo-url"];
                 
-                var maptastic_socket = io(config["maptastic-socket-url"]);
+                var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {
                     updateMaptasticDemo(data);
                 });
 
             } );
+
+            var socket = io(config['base-url'] + config['myo-socket-url']);
 
             Reveal.addEventListener( 'slidechanged', function( event ) {
                 updateSideFooter(event.currentSlide);
