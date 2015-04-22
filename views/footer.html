@@ -65,10 +65,12 @@
                 document.getElementById("ravewave-link").href = config['base-url'] + config["ravewave-url"];
                 document.getElementById("myo-link").href = config['base-url'] + config["myo-url"];
                 
+                clearMaptasticDemoCanvas();
                 var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {
                     updateMaptasticDemo(data);
                 });
+
 
             } );
 
@@ -104,13 +106,21 @@
                 }
             }
 
-            // draw the layout and mouse position from the maptastic instance on the other machine.
-            function updateMaptasticDemo(data) {
+            function clearMaptasticDemoCanvas() {
                 var canvas = document.getElementById("maptastic-demo-canvas");
                 var ctx = canvas.getContext("2d");
 
                 ctx.fillStyle = "black";
                 ctx.fillRect(0,0,canvas.width, canvas.height);
+            }
+
+            // draw the layout and mouse position from the maptastic instance on the other machine.
+            function updateMaptasticDemo(data) {
+                
+                clearMaptasticDemoCanvas();
+
+                var canvas = document.getElementById("maptastic-demo-canvas");
+                var ctx = canvas.getContext("2d");
 
                 ctx.fillStyle="white";
                 ctx.fillRect(data.mx * canvas.width-2, data.my * canvas.height-2, 5, 5);
