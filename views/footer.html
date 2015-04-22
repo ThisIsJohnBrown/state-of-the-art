@@ -23,18 +23,18 @@
 
             $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
             $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+
+            document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+            document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
             
             Reveal.initialize({
                 width:1920,
                 height: 1080,
                 controls: false,
-                progress: true,
+                progress: false,
                 history: true,
                 mouseWheel: false,
-                viewDistance: 1,
-
-                minScale: 0.2,
-                maxScale: 3.0,
+                viewDistance: 2,
 
                 autoSlide: SLConfig.deck.auto_slide_interval || 0,
                 autoSlideStoppable: true,
@@ -62,8 +62,6 @@
                 document.getElementById("projector-on-button").addEventListener("click", turnProjectorOn);
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
 
-                document.getElementById("ravewave-link").href = config['base-url'] + config["ravewave-url"];
-                document.getElementById("myo-link").href = config['base-url'] + config["myo-url"];
                 
                 var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {

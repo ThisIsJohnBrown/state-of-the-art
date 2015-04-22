@@ -9,7 +9,6 @@
 var config = {
 	'projector-on-url'      : ':8087/unblank',
 	'projector-off-url'     : ':8087/blank',
-	'plumber-url'           : 'http://raspberrypi:8080/controls.html',
 	'ravewave-url'          : ':8089',
   'myo-url'               : ':8088',
 	'maptastic-socket-url'  : ':9000',
