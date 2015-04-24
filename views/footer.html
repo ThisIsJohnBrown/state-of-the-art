@@ -301,8 +301,9 @@
             }
 
             function setBackgroundMode(mode) {
-                if(!config['webGLBackgroundEnabled']){
-                    document.body.style.backgroundImage = "url(images/backgrounds/" + mode + "empirejs.png)";
+                if(!config['webGLBackgroundEnabled']) {
+                    //if()
+                    document.body.style.backgroundImage = "url(images/backgrounds/" + mode + ".png)";
                 } else {
                     bgRenderer.setMode(mode);
                 }
