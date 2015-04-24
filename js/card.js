@@ -26,17 +26,29 @@ function backgroundRenderer(randomizer) {
 			tintAdd : new THREE.Vector3(0.19, 0.16, 0.2),
 			tintSub : new THREE.Vector3(0.7, 0.630, 0.71)
 		},
-		"bright" : {
+		"cutsheet-0" : {
 			bgColor : new THREE.Color("#f8f8f8"),
 			speedModifier : 1,
 			tintAdd : new THREE.Vector3(0.0, 0.0, 1.0),
 			tintSub : new THREE.Vector3(0.9, 0.1, 0.1)
 		},
-		"bright-2" : {
+		"cutsheet-1" : {
 			bgColor : new THREE.Color("#f8e8f8"),
 			speedModifier : 1,
 			tintAdd : new THREE.Vector3(0.7, 0.2, 0.2),
 			tintSub : new THREE.Vector3(0.19, 0.81, 0.1)
+		},
+		"cutsheet-2" : {
+			bgColor : new THREE.Color("#f0e8d0"),
+			speedModifier : 1,
+			tintAdd : new THREE.Vector3(0.2, 0.7, 0.2),
+			tintSub : new THREE.Vector3(0.79, 0.21, 0.51)
+		},
+		"bright-2" : {
+			bgColor : new THREE.Color("#f8e8f8"),
+			speedModifier : 1,
+			tintAdd : new THREE.Vector3(0.7, 0.2, 0.2),
+			tintSub : new THREE.Vector3(0.99, 0.81, 0.1)
 		}
 	};
 

@@ -64,17 +64,42 @@
             
             config['base-url'] = 'http://' + window.location.host.split(':')[0];
 
+
+            // TEST THIS!!!
+            function testDemoAvailability() {
+                $.get(config['endless-plumber-url'], function(e) {
+                        console.log("Setting endless plumber link");
+                        $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+                    }).error( function(){
+                        console.log("No endless plumber..");
+                    });
+                
+                $.get(config['base-url'] + config["ravewave-url"], function() {
+                    console.log("setting ravewave iframe url");
+                    document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+                }).error( function(){
+                    console.log("Ravewave url is not reachable.");
+                });
+                
+                $.get(config['base-url'] + config["myo-url"], function() {
+                    console.log("setting myo iframe url");
+                    document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
+                }).error( function(){
+                    console.log("myo url is not reachable.");
+                });
+                
+            }
+
             $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
-            $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
 
-            document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
-            document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
-
+            // Uncomment these if "testDemoAvability" doesn't work.
+            //$("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+            //document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+            //document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
+            
             function animationFrame() {
                 bgRenderer.render();
-                //if(running){
-                    window.requestAnimationFrame(animationFrame);
-                //}
+                window.requestAnimationFrame(animationFrame);
             }
             var bgRenderer;
 
@@ -122,7 +147,7 @@
                     document.body.appendChild(canvas);
                 }
 
-               
+                testDemoAvailability();
 
                 updateSlideBackground(event.currentSlide);
                 updateSideFooter(event.currentSlide);
@@ -132,16 +157,15 @@
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
 
                 
-                
                 clearMaptasticDemoCanvas();
                 var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {
                     updateMaptasticDemo(data);
                 });
 
-                
-                animationFrame();
-
+                if(config['webGLBackgroundEnabled']) {
+                    animationFrame();
+                }
             } );
 
             var socket = io(config['base-url'] + config['myo-socket-url']);
@@ -171,6 +195,7 @@
             var cutsheets = document.getElementsByClassName('cutsheet');
             for (var i = 0; i < cutsheets.length; i++) {
                 var cut = cutsheets[i];
+                cut.setAttribute("section", i);
                 var p = cut.getElementsByTagName('p')[i];
                 if (p) {
                     p.classList.add("active");
@@ -253,8 +278,15 @@
             }
 
             function updateSlideBackground(currentSlide) {
-                if(currentSlide.className.indexOf('cutsheet') != -1){
-                    setBackgroundMode("bright");
+                if($(currentSlide).data("mode") !== undefined){
+                    setBackgroundMode($(currentSlide).data("mode"));
+                }
+                else if(currentSlide.className.indexOf('cutsheet') != -1) {
+                    var section = currentSlide.getAttribute("section");
+                    //var rnd = Math.floor(Math.random()*3);
+                   // console.log(rnd);
+                    var sectionStyle = section % 3;
+                    setBackgroundMode("cutsheet-"+sectionStyle);
                 } else {
                     setBackgroundMode("dark");
                 }
