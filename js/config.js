@@ -14,6 +14,6 @@ var config = {
   'myo-url'                : ':8088',
 	'maptastic-socket-url'   : ':9000',
 	'uncontext-example-url'  : 'http://codepen.io/ThisIsJohnBrown/embed/AqzuC?height=800&theme-id=9890',
-	'endless-plumber-url'    : 'http://endlessplumber:8000/admin.html',
+	'endless-plumber-url'    : 'http://endlessplumber.local:8000/admin.html',
   'myo-socket-url'         : ':5000'
 };

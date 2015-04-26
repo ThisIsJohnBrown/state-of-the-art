@@ -93,9 +93,9 @@
             $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
 
             // Uncomment these if "testDemoAvability" doesn't work.
-            //$("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
-            //document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
-            //document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
+            $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+            document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+            document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
             
             function animationFrame() {
                 bgRenderer.render();
@@ -147,7 +147,7 @@
                     document.body.appendChild(canvas);
                 }
 
-                testDemoAvailability();
+                //testDemoAvailability();
 
                 updateSlideBackground(event.currentSlide);
                 updateSideFooter(event.currentSlide);
