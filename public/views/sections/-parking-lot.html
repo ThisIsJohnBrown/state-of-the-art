@@ -1,0 +1,144 @@
+======================  Section 1.
+
+<section>
+    <h2>
+        
+    </h2>
+    <br>
+    <p>Describe creative coding ideals/practice</p>
+<!--
+
+
+Other definitions of creative coding
+List of qualities
+Our interpretation for use in the talk 
+
+-->
+</section>
+
+
+
+
+======================  Section 2.
+
+<section>
+    <h2>
+        CascadiaJS 2014
+    </h2>
+    <br>
+    <p>[image: A call for JavaScript powered art]</p>
+<!--
+background of why this happened
+- Cascadia JS is a conference in the PACNW
+- Last year the conference included a javascript art show
+- We wanted to do something physical, not just something on a screen.
+-->
+</section>
+
+
+
+<section>
+    <h2>
+        Get Your Hands Dirty
+    </h2>
+    <br>
+    <p class="fragment">Is this idea viable?</p>
+    <p class="fragment">Lego pieces</p>
+    <p class="fragment">Get to work</p>
+<!-- 
+- In order to vet the idea, we started with the smallest task possible, detecting a puck hitting a peg.
+- After reasoning about several ways to track the puck
+    - Accelerometers
+    - Camera tracking the puck visually
+    - Conductive puck, pinball table style
+    - piezos
+- Due to past experience (minecraft block?) we decided to try piezos
+- I had a chunkload of them already in my studio
+- So we wired one up! [video of 1 peg]
+- Even when ideas don't pan out, you can learn stuff which can be helpful in the future (mental legos).
+-->
+</section>
+
+
+                
+<section>
+    <h2>
+        Modular rendering system
+    </h2>
+    <br>
+    <p>single canvas</p>
+    <p>multi-canvas</p>
+    <p>[diagram?]</p>
+
+<!--
+- The entire rendering system runs in the browser.
+- Initially we rendered it all onto a single canvas for projection.
+- The current architecture renders the board off-screen on a separate canvas which can be scaled independently of the visible canvas.
+- Visualization code is modular, each visualizer gets to draw itself once per frame, as is notified when pegs are hit.
+-->
+
+</section>
+
+
+
+<section>
+    <h2>
+        Choosy nodes choose GIFs
+    </h2>
+    <br>
+    <p>Capture at low framerate</p>
+    <p>Upload captured frames</p>
+    <p>Child process (process.fork)</p>
+<!--
+- We tried several ways of capturing "drops" for replay
+- Rendering GIF's in the browser killed the framerate
+- Capturing every frame is also too slow.
+- Frames are captured at the target output framerate, then sent up to the server serially after the drop is complete.
+   - Required a progress bar to be displayed to keep the server from getting behind.
+   - Sometimes technical limits impose unfortunate UX concessions, but that's better than the server crashing?
+- Express and socket.io handle all communication between the browser and the back end.
+- GIF encoding is handled on a separate process via process.fork in node so express doesn't stop responding to the front-end.
+-->
+
+</section>
+
+
+
+======================  Section 3"
+
+
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p>Let's project some content</p>
+                                                        <p>[image to project]</p>
+</section>
+
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p>What the projector "sees"</p>
+                                                        <p>[photo]</p>
+</section>
+
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p>Pre-distor the content to match</p>
+                                                        <p>[image of distored content to project]</p>
+</section>
+
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p>OMG magic.</p>
+                                                         <p>[photo of projected content]</p>
+</section>

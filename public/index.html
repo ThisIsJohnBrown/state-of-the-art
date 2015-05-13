@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html class="base fullscreen loaded">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+            State of the Art
+        </title>
+
+        <meta name="description" content="Slides">
+        <link rel="stylesheet" type="text/css" href="lib/offline-v1.css">
+        <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+        <style id="user-css-output" type="text/css">
+            #main-twitter {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+                z-index: 1000;
+            }
+            #cutsheet-twitter {
+                color: white;
+                margin-top: 250px;
+            }
+            .divider {
+                color:#a0a0a0;
+            }
+            .reveal .slides section .fragment {
+                transition:none;
+            }
+            img.checkbox{
+                height:100px;
+                width:100px;
+                vertical-align:middle;
+            }
+
+            #projector-on-button,
+            #projector-off-button {
+                  font-family: "Roboto";
+                  text-transform: uppercase;
+                  font-size: 50px;
+                  background: linear-gradient(#6C7A89, #333);
+                  width: 640px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 20px;
+                  padding: 20px;
+                  cursor: pointer;
+            }
+
+            body.reveal-viewport {
+                background-size: 100% 100%;
+            }
+
+            #background-canvas{
+                position:absolute;
+                top:0px;
+                left:0px;
+            }
+
+            h1 {
+
+            }
+
+            .reveal .slides .cutsheet .band {
+                  width: 680px;
+                  background: rgba(0, 0, 0, .8);
+                  padding: 30px;
+                  height: 2000px;
+                  margin-top: -500px;
+                  padding-top: 500px;
+                  margin-left: 29px;
+            }
+
+            .reveal .slides .cutsheet h1 {
+                  font-family: "Jura";
+                  font-size: 220px;
+                  color: black;
+            }
+
+            .reveal .slides .cutsheet h1 .white {
+                color: white;
+            }
+
+            .reveal .slides .cutsheet p {
+                margin-bottom: 10px;
+                text-align: left;
+                padding-left: 47px;
+                font-size: 70px;
+                color: #666;
+            }
+
+            .reveal .slides .cutsheet p.active {
+                color: white;
+            }
+
+            .reveal .slides h2 {
+                font-family: Jura;
+                font-size: 170px;
+            }
+
+            .reveal .slides p {
+                color: #84bde1;
+                font-size: 100px;
+                font-family: "Roboto";
+            }
+
+            @-moz-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-webkit-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-ms-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-o-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @keyframes blink {
+             0% {
+                opacity: 1;
+             }
+             50% {
+                opacity: .25;
+             }
+             100% {
+                opacity: 1;
+             }
+            }
+
+            blink {
+              -webkit-animation: blink 1s ease 0s infinite;
+              -moz-animation: blink 1s ease 0s infinite;
+              -ms-animation: blink 1s ease 0s infinite;
+              -o-animation: blink 1s ease 0s infinite;
+              animation: blink 1s ease 0s infinite;
+            }
+
+            .demo-button{
+            border:1px solid #7d99ca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+             background-color: #a5b8da; background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
+             background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: linear-gradient(to bottom, #a5b8da, #7089b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+            }
+
+            .demo-button:hover{
+             border:1px solid #5d7fbc;
+             background-color: #819bcb; background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
+             background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -o-linear-gradient(top, #819bcb, #536f9d);
+             background-image: linear-gradient(to bottom, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+            }
+
+            .reveal .slides a {
+                color: #fea010;
+            }
+
+        </style>
+        <script async="" src="lib/ei.js" type="text/javascript"></script>
+        <script async="" defer src="lib/embeds.js" type="text/javascript"></script>
+    </head>
+    <body class="bright reveal-viewport theme-font-league theme-color-grey-blue">
+        <div id="main-twitter">@purdybot <span class="divider">|</span> @thisisjohnbrown</div>
+        <div class="reveal">
+            <div class="slides"><section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+<section data-mode="bright-2">
+    <h2 style="color: black;">
+        Here's what we do
+    </h2>
+    <br>
+    <aside class="notes">
+        These are speaker notes!
+    </aside>
+</section>
+
+
+<section>
+    <h2>
+        Here's why we do it
+    </h2>
+    <br>
+    <p class="fragment">Challenging</p>
+    <p class="fragment">Magic</p>
+    <p class="fragment">Rewarding</p>
+</section>
+
+
+<section>
+    <h2>
+        Warning: <blink style="color: red;">Live Demos</blink>
+    </h2>
+    <br>
+</section><section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+
+<section>
+    <h2>
+        Let's Make a Plinko!
+    </h2>
+    <br>
+    <video data-ignore style="height: 600px; float:left; width:40%;" autoplay loop data-src="/videos/plinko-drew.mov"></video>
+    <p class="fragment" style="float:left; width:20%; font-size: 120px; text-align:center; margin-top: 230px;">+</p>
+    <p class="fragment" style="float:right; width:40%;"><img style="float:left; width: 73%;" data-src="/images/js.jpg"/></p>
+    <p class="fragment" style="clear:both;">Plinko meets generative digital art</p>
+<!-- 
+- Didn't start with any technology decisions (except javascript, duh)
+- It's helpful to have someone to bounce ideas off of
+- We sat in an empty studio and drew stuff on empty ikea boxes
+- The idea we settled on was a mashup of previously unused project ideas
+- It was plinko, plinco, plin.co
+-->
+</section>
+
+
+<section>
+    <h2>
+        Will this work?
+    </h2>
+    <br>
+    <video data-ignore autoplay loop style="height: 800px;" data-src="/videos/plinco-1-peg.m4v"></video>
+</section>
+
+<section>
+    <h2>
+        This will work!
+    </h2>
+    <br>
+    <video autoplay loop style="height: 800px;" data-src="/videos/plinco-10-peg.mov"></video>
+</section>
+
+<section>
+    <h2>
+        Let's Build This Thing
+    </h2>
+    <br>
+    <video data-ignore autoplay loop style="height: 800px;" data-src="/videos/assembly.m4v"></video>
+</section>
+
+
+<section>
+    <h2>
+        Reward
+    </h2>
+    <br>
+    <video data-ignore autoplay loop style="height: 800px;" data-src="/videos/plincoReward.m4v"></video>
+<!--
+- This kind of project is fun from a technical perspective, but that's only one reason we kept at it.
+- Sharing it with others is even more rewarding than finishing the project to begin with.
+- After buliding the kiosk, we can set it up and watch how people react to it.
+- Making things like this is very different from building web apps, you have the chance to see the direct impact it has vs analytics.
+- Because the reach is much smaller than the web, the reward is much more personal.
+-->
+</section>
+
+<section>
+    <h2>Where's the JS?</h2>
+    <br>
+    <p class="fragment">Basically, everywhere.</p>
+    <p class="fragment">Visualization in Chrome</p>
+    <p class="fragment">Node.js for (almost) everything else</p>
+<!--
+- Hey Ben, that looks like a lot of hardware, this is an Empire JAY ESSSSS!
+- You might not guess, but 99.99912873% of plin.co runs on JS in one way or another.
+- The only non-JS portion is thet physical sensor hardware and a little microcontroller hooked up via USB.
+- Lots of node.js happening, all the graphics, animation, and projector tricks are running in chrome.
+-->
+</section><section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p class="fragment">Projecting content onto physical objects</p>
+    <p class="fragment">Lots of tools exist...</p>
+    <p class="fragment">but not for the web</p>
+</section>
+
+<section>
+    <h2>
+        Projection Mapping
+    </h2>
+    <br>
+    <p style="float:left; width:33%"><img src="images/source-content.png" width="100%"/></p>
+    <p style="float:left; width:33%" class="fragment"><img src="images/projected-content.png" width="100%"/></p>
+    <div>
+        <p style="font-size: 50px; margin: 200px 0 100px 0" class="fragment">CSS 3D to the rescue!</p>
+        <p style="font-size: 50px;" class="fragment">transform: matrix3d()</p>
+    </div>
+</section>
+
+<section>
+    <h2>
+        Stop: <blink style="color: red;" class="fragment">Demo Time</blink>
+    </h2>
+    <br>
+    <p><div id="projector-on-button" class="fragment">Turn Projector On</div></p>
+</section>
+
+<section>
+    <h2>
+        &nbsp;
+    </h2>
+    <p><canvas id="maptastic-demo-canvas" width="1366" height="768"></canvas></p>
+</section>
+
+<section>
+    <h2>
+        &nbsp;
+    </h2>
+    <br>
+    <p><div id="projector-off-button">Turn Projector Off</div></p>
+</section>
+
+<!-- Live demo finished -->
+
+
+<section>
+    <h2>
+        plin.co &lt;3 </br>projection mapping
+    </h2>
+    <br>
+    <p class="fragment">flexible physical setup</p>
+    <p class="fragment">avoid non-browser based tools</p>
+    <p class="fragment">built into plin.co rendering pipleline</p>
+</section>
+
+<section>
+    <h2>
+        Maptastic.js
+    </h2>
+    <p><a href="http://bit.ly/maptasticjs">bit.ly/maptasticjs</a></p>
+    <br>
+    <pre style="vertical-align:center; width:1100px; display:inline-block; font-size:50px;"><code style="width:1100px;" data-trim>
+&lt;canvas id="webgl-canvas"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+    Maptastic("webgl-canvas");
+&lt;/script&gt;
+    </code></pre>
+</section>
+
+<section>
+    <h2>
+        Maptastic.js
+    </h2>
+    <p><a href="http://bit.ly/maptasticjs">bit.ly/maptasticjs</a></p>
+    <br>
+    <video autoplay loop data-src="/videos/maptastic-video.mp4" style="width:800px; height:630px;"></video>
+</section>
+<section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+<section>
+    <h2>
+        Hardware
+    </h2>
+    <br>
+    <p class="fragment">vendors embracing websockets</p>
+    <p class="fragment">we're all kids in a candy store</p>
+</section>
+
+
+<section>
+    <h2>
+        Kinect
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/kinect.png"/></p>
+    <p class="fragment"><img src="images/checkbox-unchecked.svg" class="checkbox"/>websockets</p>
+</section>
+<section>
+    <h2>
+        Kinect
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/kinect.png"/></p>
+    <p><img src="images/checkbox-checked.svg" class="checkbox"/>websockets</p>
+</section>
+
+
+<section>
+    <h2>
+        Leap Motion
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/leapMotion.png"/></p>
+    <p class="fragment"><img src="images/checkbox-unchecked.svg" class="checkbox"/>websockets</p>
+</section>
+<section>
+    <h2>
+        Leap Motion
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/leapMotion.png"/></p>
+    <p><img src="images/checkbox-checked.svg" class="checkbox"/>websockets</p>
+</section>
+
+
+<section>
+    <h2>
+        Mind Wave
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/mindWave.png"/></p>
+    <p class="fragment"><img src="images/checkbox-unchecked.svg" class="checkbox"/>websockets</p>
+</section>
+<section>
+    <h2>
+        Mind Wave
+    </h2>
+    <br>
+    <p><img style="height: 600px;" src="/images/mindWave.png"/></p>
+    <p><img src="images/checkbox-checked.svg" class="checkbox"/>websockets</p>
+</section>
+
+
+<section>
+    <h2>
+        VR Headsets
+    </h2>
+    <br>
+    <p><img style="height: 500px;" src="/images/rift.png"/><img style="height: 500px;" src="/images/cardboard.png"/></p>
+    <p class="fragment"><img src="images/checkbox-unchecked.svg" class="checkbox"/>native support</p>
+</section>
+<section>
+    <h2>
+        VR Headsets
+    </h2>
+    <br>
+    <p><img style="height: 500px;" src="/images/rift.png"/><img style="height: 500px;" src="/images/cardboard.png"/></p>
+    <p><img src="images/checkbox-checked.svg" class="checkbox"/>native support</p>
+    <p class="fragment">(soon...)</p>
+</section>
+
+<section>
+    <h2>
+       ... <!-- haven't had a demo in a few minutes -->
+    </h2>
+    <br>
+    <p></p>
+</section>
+
+<section>
+    <h2 style="font-size: 150px;">
+        Demo Arigato, <blink style="color: red;" class="fragment">Mr. Roboto.</blink>
+    </h2>
+    <br>
+    <p></p>
+</section>
+
+
+<section>
+    <h2>
+        &nbsp;
+    </h2>
+    <br>
+    <p><iframe data-src="placeholder.html" id="ravewave-link" width="100%" height="800px">Demo link</iframe></p>
+</section><section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+<section>
+    <h2>
+        uncontext.
+    </h2>
+    <br>
+    <p>structured data for generative art</p>
+    <iframe src="about:blank" data-src="about:blank" width="100%" height="660px" id="uncontext-iframe"></iframe>
+</section>
+
+<section>
+    <h2>
+        uncontext.
+    </h2>
+    <br>
+    <video autoplay loop data-src="/videos/hackday.m4v"></video>
+    <!-- ben forced to play tetris -->
+</section>
+
+<section>
+    <h2>
+        last second idea
+    </h2>
+    <br>
+    <p>uncontext. plays a nintendo emulator</p>
+    <p class="fragment" style="font-size: 50px; margin-bottom: 40px;">(badly)</p>
+    <video class="fragment" autoplay loop data-src="/videos/endlessPlumber.m4v"></video>
+</section>
+
+<section>
+    <h2>
+        Endless Plumber
+    </h2>
+    <br>
+    <p>uncontext. plays a REAL nintendo</p>
+    <p style="font-size: 50px; margin-bottom: 40px;">(still badly)</p>
+</section>
+
+<section>
+    <h2>
+        Ninten<blink style="color: red;" class="fragment">demo</blink>
+    </h2>
+</section>
+
+
+
+<section id="live-video-slide">
+    <h2>
+        Endless Plumber
+    </h2>
+    <br>
+    <p>
+        <video id="live-video" autoplay="true" width="900" height="700"></video>
+        <iframe class="fragment" src="placeholder.html" data-sourc="placeholder.html" style="width:900px; height:700px;" id="endless-plumber-iframe"></iframe>
+    </p>
+<!-- 
+    Maybe include this question later on as part of a general reflection on the topic
+    <p>Is this art?</p> 
+-->
+</section>
+
+<!--
+<section>
+    <h2>
+        truth
+    </h2>
+    <br>
+    <p>was just a fun after-thought at the end of the hack-day</p>
+    <p>"Silly" or small ideas often lead to interesting projects</p>
+</section>
+--><section class="cutsheet" data-status="Here comes the big reveal.">
+    <h1>
+        <span class="white">State</span> of the Art
+    </h1>
+    <div class="band">
+      <p>Away we go</p>
+      <p data-status="gravitation">Come on down</p>
+      <p data-status="transformation">Off the screen</p> <!-- 2 demos, projector and maptastic -->
+      <p data-status="combination">From the outside</p> <!-- 1 demo, RaveWave -->
+      <p data-status="translation">Keep moving right</p> <!-- 1 demo, endless plumber -->
+      <p data-status="incitation">Wrap it up</p> <!-- 1 demo, myo -->
+
+      <div id="cutsheet-twitter"><div>@purdybot <span class="divider">|</span> @thisisjohnbrown</div></div>
+    </div>
+</section>
+<section>
+    <h2>
+        Try this at home
+    </h2>
+    <br>
+    <p class="fragment">Start small, get your hands dirty!</p>
+</section>
+
+
+<section>
+    <h2>
+        OMG it's full of JS
+    </h2>
+    <br>
+    <p class="fragment">If it exists, you can hook it up to Javascript</p>
+    <p class="fragment">There's data all around us</p>
+</section>
+
+<section>
+    <h2>
+        Final <blink style="color: red;" class="fragment">Demo</blink><span class="fragment">...?</span>
+    </h2>
+</section>
+
+<section>
+
+    <br>
+    <p><iframe data-src="placeholder.html" width="100%" height="800px" id="myo-link">Demo link</iframe><p>
+    <p class="fragment" target="_blank"><a href="http://twitter.com/thisisjohnbrown">Check it out.</a></p>
+</section>
+
+<section>
+    <h2>
+        Bring a buddy
+    </h2>
+    <br>
+    <p class="fragment">Don't work in a vacuum</p>
+    <p class="fragment">Collaborate between disciplines</p>
+<!--
+Get outside your technological comfort zones!
+-->
+</section>
+
+<section>
+    <h2>
+        Bring many buddies
+    </h2>
+    <br>
+    <p class="fragment">Find a creative code group!</p>
+</section>
+
+<section>
+    <h2>
+        Creative code groups
+    </h2>
+    <br>
+    <p>Chicago</p>
+    <p class="fragment" style="font-size: 55px;"><a href="https://www.evl.uic.edu/creativecoding/">Electronic Visualization Laboratory</a></p>
+</section>
+
+<section>
+    <h2>
+        Creative code groups
+    </h2>
+    <br>
+    <p>Nashville</p>
+    <p class="fragment" style="font-size: 55px;"><a href="http://www.meetup.com/nashcc/">Nashville Creative Coders</a></p>
+</section>
+
+<section>
+    <h2>
+        Creative code groups
+    </h2>
+    <br>
+    <p>NYC</p>
+    <p class="fragment" style="font-size: 55px;"><a href="http://www.meetup.com/NYC-Creative-and-Experimental-Software-Group/">Creative and Experimental Software Group</a></p>
+    <p class="fragment" style="font-size: 55px;"><a href="http://sfpc.io/">School For Poetic Computation</a></p>
+    <p class="fragment" style="font-size: 55px;"><a href="http://brooklynjs.com/">BrooklynJS</a></p>
+    <p class="fragment" style="font-size: 55px;"><a href="http://labs.benpurdy.com/argoo">Empire Creative Coders</a></p>
+</section>
+
+<section>
+    <h2>
+        Thanks!
+    </h2>
+    <br>
+    <div class="fragment">
+    <p>We are</p>
+    <p><a href="http://twitter.com/purdybot" target="_blank">@purdybot</a> and <a href="http://twitter.com/thisisjohnbrown" target="_blank">@thisisjohnbrown</a></p>
+    </div>
+    <br>
+    <p class="fragment">Slides up soon at <a href="http://bit.ly/empire-state-of-the-art" target="_blank"><br>bit.ly/empire-state-of-the-art</a></p>
+</section>
+
+<section data-mode="bright-2">
+
+</section>
+
+            </div>
+        </div>
+        <script id="shader-vertex" type="x-shader/x-vertex">
+        attribute vec4 color;
+        attribute float alpha;
+        varying float vAlpha;
+        varying vec4 col;
+        void main() {       
+          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+          vAlpha = alpha;
+          col = color;
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      </script>
+      <script id="shader-fragment-sub" type="x-shader/x-fragment">
+        varying vec4 col;
+        varying float vAlpha;
+        uniform vec3 tint;
+        void main() {
+          vec3 tinted = col.rgb * tint;
+          float r = 1.0 - ((1.0-tinted.r) * vAlpha);
+            float g = 1.0 - ((1.0-tinted.g) * vAlpha);
+            float b = 1.0 - ((1.0-tinted.b) * vAlpha);
+          gl_FragColor = vec4(r,g,b, 1.0);//vec4(r,g,b, 1.0);
+        }
+      </script>
+      <script id="shader-fragment-add" type="x-shader/x-fragment">
+        varying vec4 col;
+        varying float vAlpha;
+        uniform vec3 tint;
+        void main() {
+          vec3 tinted = col.rgb * tint;
+          float r = (tinted.r * vAlpha);
+          float g = (tinted.g * vAlpha);
+          float b = (tinted.b * vAlpha);
+
+          gl_FragColor = vec4(r,g,b, 1.0);// * tint;
+        }
+      </script>
+        <script type="text/javascript">
+        var SLConfig = {"deck": {"id":245746,"slug":"make-art-not-apps","title":"Make Art, Not Apps","description":"","visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/thisisjohnbrown/e56f76/make-art-not-apps.jpg","view_count":9,"user":{"id":152052,"username":"thisisjohnbrown","name":"","email":"thisisjohnbrown@gmail.com","description":"","thumbnail_url":"https://www.gravatar.com/avatar/53d5a7978a6560960cabd614e0233e41?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"settings":{"id":3213,"present_controls":true,"present_upsizing":true,"editor_grid":true,"editor_snap":true,"developer_mode":true},"registered":true},"background_transition":"none","transition":"none","theme_id":null,"theme_font":"league","theme_color":"grey-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":true,"rtl":false,"version":1,"notes":{}}};
+        SLConfig.current_user = {
+                name: "",
+                username: "thisisjohnbrown",
+                pro: true
+            };
+        </script>
+
+        <script src="js/seedrandom.min.js"></script>
+        <script src="js/fft-smoothed.js"></script>
+        <script src="js/three.min.js"></script>
+        <script src="js/card.js"></script>
+      
+        <script src="js/config.js"></script>
+        <script src="lib/jquery-1.11.2.min.js"></script>
+        <script src="lib/head.min.js" type="text/javascript"></script>
+        <script src="lib/reveal.min.js" type="text/javascript"></script>
+
+        <script src="lib/socket.io.js"></script>
+
+        <script type="text/javascript">
+            
+            config['base-url'] = 'http://' + window.location.host.split(':')[0];
+
+            var videos = document.getElementsByTagName('video');
+
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].setAttribute('data-src', config['video-url'] + videos[i].getAttribute('data-src'));
+            }
+
+
+            // TEST THIS!!!
+            function testDemoAvailability() {
+                $.get(config['endless-plumber-url'], function(e) {
+                        console.log("Setting endless plumber link");
+                        $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+                    }).error( function(){
+                        console.log("No endless plumber..");
+                    });
+                
+                $.get(config['base-url'] + config["ravewave-url"], function() {
+                    console.log("setting ravewave iframe url");
+                    document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+                }).error( function(){
+                    console.log("Ravewave url is not reachable.");
+                });
+                
+                $.get(config['base-url'] + config["myo-url"], function() {
+                    console.log("setting myo iframe url");
+                    document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
+                }).error( function(){
+                    console.log("myo url is not reachable.");
+                });
+                
+            }
+
+            $("#uncontext-iframe").attr("data-src", config["uncontext-example-url"]);
+
+            // Uncomment these if "testDemoAvability" doesn't work.
+            $("#endless-plumber-iframe").attr("data-src", config["endless-plumber-url"]);
+            document.getElementById("ravewave-link").setAttribute('data-src', config['base-url'] + config["ravewave-url"]);
+            document.getElementById("myo-link").setAttribute('data-src', config['base-url'] + config["myo-url"]);
+            
+            function animationFrame() {
+                bgRenderer.render();
+                window.requestAnimationFrame(animationFrame);
+            }
+            var bgRenderer;
+
+            Reveal.initialize({
+                width:1920,
+                height: 1080,
+                controls: false,
+                progress: false,
+                history: true,
+                mouseWheel: false,
+                viewDistance: 2,
+
+                autoSlide: SLConfig.deck.auto_slide_interval || 0,
+                autoSlideStoppable: true,
+
+                rolling_links: SLConfig.deck.rolling_links || true,
+                center: SLConfig.deck.center || false,
+                loop: SLConfig.deck.should_loop || false,
+                rtl: SLConfig.deck.rtl || false,
+
+                transition: SLConfig.deck.transition,
+                backgroundTransition: SLConfig.deck.background_transition,
+
+                dependencies: [
+                    { src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener( 'ready', function( event ) {
+
+                if(config['webGLBackgroundEnabled']) {
+                    bgRenderer = new backgroundRenderer();
+                    bgRenderer.init(new Math.seedrandom("empirejs"));
+                    bgRenderer.resize(window.innerWidth, window.innerHeight);
+                    
+                    window.addEventListener("resize", function(e){
+                        bgRenderer.resize(window.innerWidth, window.innerHeight);
+                    });
+
+                    var canvas = bgRenderer.getCanvasElement();
+                    canvas.id = "background-canvas";
+                    document.body.appendChild(canvas);
+                }
+
+                //testDemoAvailability();
+
+                updateSlideBackground(event.currentSlide);
+                updateSideFooter(event.currentSlide);
+                updateSlideVideo(event.currentSlide);
+
+                document.getElementById("projector-on-button").addEventListener("click", turnProjectorOn);
+                document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
+
+                
+                clearMaptasticDemoCanvas();
+                var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
+                maptastic_socket.on("map-update", function(data) {
+                    updateMaptasticDemo(data);
+                });
+
+                if(config['webGLBackgroundEnabled']) {
+                    animationFrame();
+                }
+            } );
+
+            var socket = io(config['base-url'] + config['myo-socket-url']);
+
+            Reveal.addEventListener( 'slidechanged', function( event ) {
+                updateSlideBackground(event.currentSlide);
+                updateSideFooter(event.currentSlide);
+                updateSlideVideo(event.currentSlide);
+            } );
+
+            if( SLConfig.deck.notes ) {
+                [].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+                    var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+                    if( value && typeof value === 'string' ) {
+                        slide.setAttribute( 'data-notes', value );
+                    }
+
+                } );
+            }
+
+            var cutsheets = document.getElementsByClassName('cutsheet');
+            for (var i = 0; i < cutsheets.length; i++) {
+                var cut = cutsheets[i];
+                cut.setAttribute("section", i);
+                var p = cut.getElementsByTagName('p')[i];
+                if (p) {
+                    p.classList.add("active");
+                }
+            }
+
+            function clearMaptasticDemoCanvas() {
+                var canvas = document.getElementById("maptastic-demo-canvas");
+                var ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "black";
+                ctx.fillRect(0,0,canvas.width, canvas.height);
+            }
+
+            // draw the layout and mouse position from the maptastic instance on the other machine.
+            function updateMaptasticDemo(data) {
+                
+                clearMaptasticDemoCanvas();
+
+                var canvas = document.getElementById("maptastic-demo-canvas");
+                var ctx = canvas.getContext("2d");
+
+                ctx.fillStyle="white";
+                ctx.fillRect(data.mx * canvas.width-2, data.my * canvas.height-2, 5, 5);
+
+                ctx.strokeStyle = "white";
+                ctx.beginPath();
+                ctx.moveTo(data.points[0][0] * canvas.width, data.points[0][1] * canvas.height)
+                for(var i = 0; i < 4; i++) {
+                    ctx.lineTo(data.points[i][0] * canvas.width, data.points[i][1] * canvas.height );
+                }
+                ctx.lineTo(data.points[0][0] * canvas.width, data.points[0][1] * canvas.height );
+                ctx.stroke();
+            }
+
+            function updateSideFooter(currentSlide) {
+                if (currentSlide.className.indexOf('cutsheet') !== -1) {
+                    //console.log('true');
+                    document.getElementById('cutsheet-twitter').style.display = '';
+                    document.getElementById('main-twitter').style.display = 'none';
+
+                    var active = currentSlide.getElementsByClassName('active');
+                    if (active.length) {
+                        if (active[0].getAttribute('data-status')) {
+                            socket.emit('upload', {'name': active[0].getAttribute('data-status')});
+                        }
+                    }
+                } else {
+                    //console.log('false')
+                    document.getElementById('cutsheet-twitter').style.display = 'none';
+                    document.getElementById('main-twitter').style.display = '';
+                }
+            }
+
+            var liveVideoStream = null;
+            function updateSlideVideo(currentSlide) {
+
+                if(currentSlide.id === 'live-video-slide'){
+                    
+                    if(navigator.webkitGetUserMedia != null) { 
+                        var options = { 
+                            video:true, 
+                            audio:true 
+                        }; 
+                         
+                        navigator.webkitGetUserMedia(options, 
+                            function(stream) {
+                                liveVideoStream = stream;
+                                var video = document.getElementById("live-video"); 
+                                video.src = window.webkitURL.createObjectURL(stream); 
+                                video.volume = 0;
+                            }, 
+                            function(e) { 
+                                //console.log("couldn't get user media"); 
+                            } 
+                        ); 
+                    }
+                } else {
+                    var video = document.getElementById("live-video"); 
+                    video.pause();
+                    video.src = ""; 
+                    if(liveVideoStream != null) {
+                        liveVideoStream.stop();
+                        liveVideoStream = null;
+                    }
+                }
+            }
+
+            function updateSlideBackground(currentSlide) {
+                if($(currentSlide).data("mode") !== undefined){
+                    setBackgroundMode($(currentSlide).data("mode"));
+                }
+                else if(currentSlide.className.indexOf('cutsheet') != -1) {
+                    var section = currentSlide.getAttribute("section");
+                    //var rnd = Math.floor(Math.random()*3);
+                   // console.log(rnd);
+                    var sectionStyle = section % 3;
+                    setBackgroundMode("cutsheet-"+sectionStyle);
+                } else {
+                    setBackgroundMode("dark");
+                }
+            }
+
+            function turnProjectorOn() {
+                $.get(config['base-url'] + config['projector-on-url']);
+            }
+
+            function turnProjectorOff() {
+                $.get(config['base-url'] + config['projector-off-url']);
+            }
+
+            function setBackgroundMode(mode) {
+                if(!config['webGLBackgroundEnabled']) {
+                    //if()
+                    document.body.style.backgroundImage = "url(images/backgrounds/" + mode + ".png)";
+                } else {
+                    bgRenderer.setMode(mode);
+                }
+            }
+            
+        </script>
+    </body>
+</html>

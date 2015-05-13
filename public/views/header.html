@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="base fullscreen loaded">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+            State of the Art
+        </title>
+
+        <meta name="description" content="Slides">
+        <link rel="stylesheet" type="text/css" href="lib/offline-v1.css">
+        <link href='fonts/fonts.css' rel='stylesheet' type='text/css'>
+        <style id="user-css-output" type="text/css">
+            #main-twitter {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: white;
+                z-index: 1000;
+            }
+            #cutsheet-twitter {
+                color: white;
+                margin-top: 250px;
+            }
+            .divider {
+                color:#a0a0a0;
+            }
+            .reveal .slides section .fragment {
+                transition:none;
+            }
+            img.checkbox{
+                height:100px;
+                width:100px;
+                vertical-align:middle;
+            }
+
+            #projector-on-button,
+            #projector-off-button {
+                  font-family: "Roboto";
+                  text-transform: uppercase;
+                  font-size: 50px;
+                  background: linear-gradient(#6C7A89, #333);
+                  width: 640px;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 20px;
+                  padding: 20px;
+                  cursor: pointer;
+            }
+
+            body.reveal-viewport {
+                background-size: 100% 100%;
+            }
+
+            #background-canvas{
+                position:absolute;
+                top:0px;
+                left:0px;
+            }
+
+            h1 {
+
+            }
+
+            .reveal .slides .cutsheet .band {
+                  width: 680px;
+                  background: rgba(0, 0, 0, .8);
+                  padding: 30px;
+                  height: 2000px;
+                  margin-top: -500px;
+                  padding-top: 500px;
+                  margin-left: 29px;
+            }
+
+            .reveal .slides .cutsheet h1 {
+                  font-family: "Jura";
+                  font-size: 220px;
+                  color: black;
+            }
+
+            .reveal .slides .cutsheet h1 .white {
+                color: white;
+            }
+
+            .reveal .slides .cutsheet p {
+                margin-bottom: 10px;
+                text-align: left;
+                padding-left: 47px;
+                font-size: 70px;
+                color: #666;
+            }
+
+            .reveal .slides .cutsheet p.active {
+                color: white;
+            }
+
+            .reveal .slides h2 {
+                font-family: Jura;
+                font-size: 170px;
+            }
+
+            .reveal .slides p {
+                color: #84bde1;
+                font-size: 100px;
+                font-family: "Roboto";
+            }
+
+            @-moz-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-webkit-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-ms-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @-o-keyframes blink {
+             0% {
+               opacity: 1;
+             }
+             50% {
+               opacity: .25;
+             }
+             100% {
+               opacity: 1;
+             }
+
+            }
+
+            @keyframes blink {
+             0% {
+                opacity: 1;
+             }
+             50% {
+                opacity: .25;
+             }
+             100% {
+                opacity: 1;
+             }
+            }
+
+            blink {
+              -webkit-animation: blink 1s ease 0s infinite;
+              -moz-animation: blink 1s ease 0s infinite;
+              -ms-animation: blink 1s ease 0s infinite;
+              -o-animation: blink 1s ease 0s infinite;
+              animation: blink 1s ease 0s infinite;
+            }
+
+            .demo-button{
+            border:1px solid #7d99ca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:12px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+             background-color: #a5b8da; background-image: -webkit-gradient(linear, left top, left bottom, from(#a5b8da), to(#7089b3));
+             background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+             background-image: linear-gradient(to bottom, #a5b8da, #7089b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a5b8da, endColorstr=#7089b3);
+            }
+
+            .demo-button:hover{
+             border:1px solid #5d7fbc;
+             background-color: #819bcb; background-image: -webkit-gradient(linear, left top, left bottom, from(#819bcb), to(#536f9d));
+             background-image: -webkit-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -moz-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -ms-linear-gradient(top, #819bcb, #536f9d);
+             background-image: -o-linear-gradient(top, #819bcb, #536f9d);
+             background-image: linear-gradient(to bottom, #819bcb, #536f9d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#819bcb, endColorstr=#536f9d);
+            }
+
+            .reveal .slides a {
+                color: #fea010;
+            }
+
+        </style>
+        <script async="" src="lib/ei.js" type="text/javascript"></script>
+        <script async="" defer src="lib/embeds.js" type="text/javascript"></script>
+    </head>
+    <body class="bright reveal-viewport theme-font-league theme-color-grey-blue">
+        <div id="main-twitter">@purdybot <span class="divider">|</span> @thisisjohnbrown</div>
+        <div class="reveal">
+            <div class="slides">
