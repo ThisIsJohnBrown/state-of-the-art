@@ -228,15 +228,15 @@
                 var canvas = document.getElementById("maptastic-demo-canvas");
                 var ctx = canvas.getContext("2d");
 
-                ctx.fillStyle="white";
+                ctx.fillStyle = "white";
                 
                 var cursorX = data.mx * canvas.width;
                 var cursorY = data.my * canvas.height;
                 
                 ctx.beginPath();
                 ctx.moveTo(cursorX, cursorY);
-                ctx.lineTo(cursorX + 10, cursorY + 5);
-                ctx.lineTo(cursorX + 7, cursorY + 12);
+                ctx.lineTo(cursorX + 14, cursorY + 7);
+                ctx.lineTo(cursorX + 8, cursorY + 11);
                 ctx.lineTo(cursorX, cursorY);
                 ctx.fill();
 
