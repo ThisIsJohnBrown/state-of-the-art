@@ -215,6 +215,9 @@
 
                 ctx.fillStyle = "black";
                 ctx.fillRect(0,0,canvas.width, canvas.height);
+
+                ctx.strokeStyle = "white";
+                ctx.strokeRect(0,0,canvas.width-1, canvas.height-1);
             }
 
             // draw the layout and mouse position from the maptastic instance on the other machine.
@@ -226,7 +229,17 @@
                 var ctx = canvas.getContext("2d");
 
                 ctx.fillStyle="white";
-                ctx.fillRect(data.mx * canvas.width-2, data.my * canvas.height-2, 5, 5);
+                
+                var cursorX = data.mx * canvas.width;
+                var cursorY = data.my * canvas.height;
+                
+                ctx.beginPath();
+                ctx.moveTo(cursorX, cursorY);
+                ctx.lineTo(cursorX + 10, cursorY + 5);
+                ctx.lineTo(cursorX + 7, cursorY + 12);
+                ctx.lineTo(cursorX, cursorY);
+                ctx.fill();
+
 
                 ctx.strokeStyle = "white";
                 ctx.beginPath();
