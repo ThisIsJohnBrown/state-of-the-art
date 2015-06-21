@@ -162,7 +162,13 @@
                 document.getElementById("projector-on-button").addEventListener("click", turnProjectorOn);
                 document.getElementById("projector-off-button").addEventListener("click", turnProjectorOff);
 
-                
+                $("#projector-on-button,#projector-off-button").on("mousedown", function(e) {
+                    $(this).addClass("clicked");
+                });
+                $("#projector-on-button,#projector-off-button").on("mouseup", function(e) {
+                    $(this).removeClass("clicked");
+                });
+
                 clearMaptasticDemoCanvas();
                 var maptastic_socket = io(config['base-url'] + config["maptastic-socket-url"]);
                 maptastic_socket.on("map-update", function(data) {
